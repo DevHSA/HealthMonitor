@@ -1,1 +1,3 @@
 **INSTRUCTIONS FOR FRONTEND**
+
+Production version contains the latest code. run npm start to start the FE server and view the work.

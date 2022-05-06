@@ -1,1 +1,3 @@
 **INSTRUCTIONS FOR SENSOREND**
+
+Run the python file on an Rpi device with the sensors attached.
