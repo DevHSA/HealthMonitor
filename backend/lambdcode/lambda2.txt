@@ -1,0 +1,79 @@
+console.log('Loading function');
+const AWS = require('aws-sdk');
+const dynamo = new AWS.DynamoDB.DocumentClient();
+
+const collection ="IoT_sensor_data"
+
+exports.handler = function (event, context, callback) {
+    
+    console.log('Received event:', JSON.stringify(event, null, 2));
+    
+    const params = {
+    TableName: collection,
+    Item:{
+        // "serialNumber": event.serialNumber,
+        
+        // "activated": event.activated,
+        "clientID": event.clientID,
+        "timestamp": event.timestamp,
+        "contact": event.contact, 
+        "temperature" : event.temperature, 
+        "heartrate": event.heartrate
+        // "type": event.type,
+        // "payload": event.payload
+        }
+    };
+    
+    console.log("Saving Telemetry Data");
+    console.log(params)
+    
+    dynamo.put(params, function(err, data) {
+        if (err) {
+            console.error("Unable to add device. Error JSON:", JSON.stringify(err, null, 2));
+            context.fail();
+        } else {
+            console.log(data)
+            console.log("Data saved:", JSON.stringify(params, null, 2));
+            context.succeed();
+            return {"message": "Item created in DB"}
+        }
+    });
+    
+    // TODO implement
+    // const response = {
+    //     statusCode: 200,
+    //     body: JSON.stringify('Hello from Lambda!'),
+    // };
+    // return response;
+    
+};
+
+
+// // Handler lamda function
+// exports.handler = function(event, context) {
+// console.log('Received event:', JSON.stringify(event, null, 2));
+//   const params = {
+//     TableName: collection,
+//     Item:{
+//         "clientId": event.clientId,
+//         "timestamp": event.timestamp,
+//         "contact": event.contact,
+//         "temperature": event.temperature,
+//         "humidity": event.humidity,
+        
+//         // "serialNumber": event.serialNumber,
+//         // "timestamp": event.dateTime,
+//         // "activated": event.activated,
+//         // "clientId": event.clientId,
+//         // "device": event.device,
+//         // "type": event.type,
+//         // "payload": event.payload
+//         }
+//     };
+
+    
+// }
+
+
+
+

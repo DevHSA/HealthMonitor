@@ -1,1 +1,7 @@
 **INSTRUCTIONS FOR BACKEND**
+
+Lambda functions are written as text files as AWS has been torn down. 
+
+nodejs module to call twilio api from the front end
+
+AWS credentials also available.

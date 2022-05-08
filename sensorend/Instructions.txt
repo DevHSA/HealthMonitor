@@ -1,3 +1,5 @@
 **INSTRUCTIONS FOR SENSOREND**
 
 Run the python file on an Rpi device with the sensors attached.
+
+Run the script by using the command: “python3 finalAWS.py”

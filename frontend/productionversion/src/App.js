@@ -181,7 +181,7 @@ const App = () => {
 
         let apiParams = {};
 
-        if (average11 > 27) {
+        if (average11 > 28) {
           apiParams = {
             phNo: "9489575958",
             message: "temperature Abnormality detected",
@@ -197,7 +197,7 @@ const App = () => {
             });
         }
 
-        if (average12 > 27) {
+        if (average12 > 28) {
           apiParams = {
             phNo: "9489575958",
             message: "Temperature Abnormality detected",

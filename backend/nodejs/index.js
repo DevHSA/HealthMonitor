@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const accountSid = "AC37254c7677a8ad141f521e9da2800c40";
-const authToken = "c65cab7423d53198c029e6ff07b9fecc";
+const authToken = "16888e2a439f6fa0e32ea32533c481c3";
 const client = require("twilio")(accountSid, authToken);
 
 const app = express();
